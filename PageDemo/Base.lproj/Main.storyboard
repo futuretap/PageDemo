@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22152" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g3W-r8-JkI">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22127"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="fe3-za-x0c">
+            <objects>
+                <viewController id="g3W-r8-JkI" customClass="RootViewController" customModule="PageDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tKM-Cy-MAo">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-Zu-HN5">
+                                <rect key="frame" x="387" y="681" width="250" height="683"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="OtV-ma-Nfh"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="GzC-Ds-H4d" kind="embed" id="YBD-0M-k0H"/>
+                                </connections>
+                            </containerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M3T-eO-GwX">
+                                <rect key="frame" x="0.0" y="24" width="1024" height="647"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlq-3E-zGR">
+                                <rect key="frame" x="756" y="1211" width="112" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log current"/>
+                                <connections>
+                                    <action selector="logCurrent:" destination="g3W-r8-JkI" eventType="touchUpInside" id="5mV-xk-5dO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="apL-29-l8a"/>
+                        <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wgI-Zu-HN5" firstAttribute="centerX" secondItem="tKM-Cy-MAo" secondAttribute="centerX" id="27q-vN-DEA"/>
+                            <constraint firstItem="wgI-Zu-HN5" firstAttribute="top" secondItem="M3T-eO-GwX" secondAttribute="bottom" constant="10" id="2TU-xH-gFM"/>
+                            <constraint firstItem="wgI-Zu-HN5" firstAttribute="height" secondItem="tKM-Cy-MAo" secondAttribute="height" multiplier="0.5" id="Ah2-1W-EGK"/>
+                            <constraint firstItem="apL-29-l8a" firstAttribute="trailing" secondItem="M3T-eO-GwX" secondAttribute="trailing" id="BzS-K4-jRb"/>
+                            <constraint firstItem="M3T-eO-GwX" firstAttribute="top" secondItem="apL-29-l8a" secondAttribute="top" id="IkM-UK-VNM"/>
+                            <constraint firstAttribute="bottom" secondItem="wgI-Zu-HN5" secondAttribute="bottom" constant="2" id="VHC-RW-69W"/>
+                            <constraint firstItem="Wlq-3E-zGR" firstAttribute="centerX" secondItem="wgI-Zu-HN5" secondAttribute="centerX" constant="300" id="c4V-kf-KQe"/>
+                            <constraint firstItem="M3T-eO-GwX" firstAttribute="leading" secondItem="apL-29-l8a" secondAttribute="leading" id="tgt-qn-8f5"/>
+                            <constraint firstItem="apL-29-l8a" firstAttribute="bottom" secondItem="Wlq-3E-zGR" secondAttribute="bottom" constant="100" id="x4Z-ly-dUa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="M3T-eO-GwX" id="KuV-V3-klc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhW-Eb-PSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190.4296875" y="14.934114202049779"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="7hm-GX-nHv">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GzC-Ds-H4d" customClass="PageViewController" customModule="PageDemo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWc-Hd-feY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="17"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="873-pE-0HX">
+            <objects>
+                <viewController storyboardIdentifier="vc" id="8Ku-Z8-w67" customClass="ViewController" customModule="PageDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cdj-7w-0DP">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdh-TY-Xty">
+                                <rect key="frame" x="104" y="189.5" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FBM-Y6-5Xt"/>
+                                    <constraint firstAttribute="width" constant="42" id="Iwr-PH-m3U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fh2-Gh-dkT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rdh-TY-Xty" firstAttribute="centerX" secondItem="Cdj-7w-0DP" secondAttribute="centerX" id="59t-w2-RWE"/>
+                            <constraint firstItem="Rdh-TY-Xty" firstAttribute="centerY" secondItem="Cdj-7w-0DP" secondAttribute="centerY" id="nwL-uU-E4m"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="250" height="400"/>
+                    <connections>
+                        <outlet property="label" destination="Rdh-TY-Xty" id="kVR-PH-PYB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wp8-B6-VP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="10"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="underPageBackgroundColor">
+            <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
